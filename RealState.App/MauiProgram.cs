@@ -1,13 +1,21 @@
-﻿namespace RealState.App;
+﻿using CommunityToolkit.Maui;
+using Microsoft.Extensions.DependencyInjection;
+using RealState.App.Services;
+using RealState.App.ViewModels;
+
+namespace RealState.App;
 
 public static class MauiProgram
 {
-	public static MauiApp CreateMauiApp()
+    static IServiceProvider ServiceProvider { get; set; }
+    public static MauiApp CreateMauiApp()
 	{
 		var builder = MauiApp.CreateBuilder();
-		builder
+
+        builder
 			.UseMauiApp<App>()
-			.ConfigureFonts(fonts =>
+            .UseMauiCommunityToolkit()
+            .ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
@@ -19,6 +27,24 @@ public static class MauiProgram
                 fonts.AddFont("fa-solid-900.ttf", "FAsolid900");
             });
 
-		return builder.Build();
-	}
+        builder.Services.AddTransient<IHouseServices, HouseServices>();
+        builder.Services.AddTransient<MainViewModel>();
+
+        
+
+		var mauiApp = builder.Build();
+
+        ServiceProvider = mauiApp.Services;
+
+        return mauiApp;
+    }
+
+
+    public static TService GetService<TService>()
+    {
+        var result = ServiceProvider.GetService<TService>();
+        if (result == null)
+            throw new Exception("service not registered");
+        return result;
+    }
 }

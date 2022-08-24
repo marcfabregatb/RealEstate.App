@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             
              x:Class="RealState.App.Views.MainPage"
-             BackgroundColor="#ebecee">
+             xmlns:viewModels="clr-namespace:RealState.App.ViewModels"
+             xmlns:models="clr-namespace:RealState.App.Models"
+             BackgroundColor="#ebecee"
+             x:DataType="viewModels:MainViewModel">
     <ContentPage.Resources>
         <ResourceDictionary>
 
@@ -57,8 +59,8 @@
             </Border>
 
 
-            <CollectionView>
-                <CollectionView.ItemsSource>
+            <CollectionView ItemsSource="{Binding Categories}">
+                <!--<CollectionView.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>mono</x:String>
                         <x:String>monodroid</x:String>
@@ -70,7 +72,7 @@
                         <x:String>monomodal</x:String>
                         <x:String>mononucleosis</x:String>
                     </x:Array>
-                </CollectionView.ItemsSource>
+                </CollectionView.ItemsSource>-->
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Span="2"
                         Orientation="Horizontal"
@@ -78,25 +80,32 @@
                         VerticalItemSpacing="6"/>
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
-                    <DataTemplate>
+                    <DataTemplate x:DataType="models:Category">
                         <Border HeightRequest="60" Padding="20,4,4,4" BackgroundColor="White" StrokeThickness="0">
                             <Border.StrokeShape>
                                 <RoundRectangle CornerRadius="15"/>
                             </Border.StrokeShape>
                             <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
-                                <Label VerticalOptions="Center" Text="{Binding .}" TextColor="#887e95"></Label>
+                                <Label VerticalOptions="Center" Text="{Binding Name}" TextColor="#887e95"></Label>
                                 <Border Grid.Column="1">
                                     <Border.StrokeShape>
                                         <RoundRectangle CornerRadius="10"/>
                                     </Border.StrokeShape>
-                                    <Image WidthRequest="50" BackgroundColor="Blue"></Image>
+                                    <Image WidthRequest="50" Aspect="AspectFill" Source="{Binding Image}"></Image>
                                 </Border>
-
                             </Grid>
-
                         </Border>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <CollectionView>
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal"
+                                       ItemSpacing="6"/>
+
+                </CollectionView.ItemsLayout>
+
             </CollectionView>
 
 
@@ -137,12 +146,12 @@
                 FontSize="18"
                 HorizontalOptions="Center" />
 
-            <Button
+            <!--<Button
                 x:Name="CounterBtn"
                 Text="Click me"
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center" />-->
 
         </VerticalStackLayout>
     </ScrollView>

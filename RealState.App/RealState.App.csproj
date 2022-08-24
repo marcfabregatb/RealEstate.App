@@ -59,10 +59,21 @@
 	  <None Remove="Resources\Fonts\Mulish-Italic.ttf" />
 	  <None Remove="Resources\Fonts\Mulish.ttf" />
 	  <None Remove="Resources\Images\chevron_down.svg" />
+	  <None Remove="Resources\Images\condo.jpg" />
+	  <None Remove="Resources\Images\exterior7.jpg" />
+	  <None Remove="Resources\Images\kitchen7.jpeg" />
+	  <None Remove="Resources\Images\studio.jpg" />
+	  <None Remove="Resources\Images\townhouse.jpg" />
+	  <None Remove="Resources\Images\urban.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiFont Include="Helpers\FontAwesomeIcons.cs" />
+	  <PackageReference Include="CommunityToolkit.Maui" Version="1.2.0" />
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Helpers\" />
 	</ItemGroup>
 
 </Project>
