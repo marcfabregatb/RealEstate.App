@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+             x:Class="RealState.App.Views.MainPage"
+             BackgroundColor="#ebecee">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout Spacing="30"
+            Padding="20">
+
+
+            <Grid ColumnDefinitions="Auto, *, Auto" >
+                <Border HeightRequest="40" WidthRequest="40" Padding="5" BackgroundColor="White" StrokeThickness="0">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="10"/>
+                    </Border.StrokeShape>
+                    <Border.Shadow>
+                        <Shadow Opacity="0.3"/>
+                    </Border.Shadow>
+                    <Image
+                        Source="cog.png" />
+                </Border>
+
+                <VerticalStackLayout Grid.Column="1">
+                    <Label HorizontalOptions="Center" Text="Location" FontFamily="{StaticResource MulishFont}"></Label>
+                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="6">
+                        <Label HorizontalOptions="Center" VerticalOptions="Center" Text="Amposta" FontAttributes="Bold" FontSize="16" FontFamily="{StaticResource MulishFont}"></Label>
+                        <Image VerticalOptions="Center" Source="chevron_down.png" HeightRequest="15"></Image>
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+
+                <Border Grid.Column="2" HeightRequest="40" WidthRequest="40" BackgroundColor="White" StrokeThickness="0">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="10"/>
+                    </Border.StrokeShape>
+                    <Border.Shadow>
+                        <Shadow Opacity="0.3"/>
+                    </Border.Shadow>
+                </Border>
+            </Grid>
+
+            <Border Padding="20,0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+                <Grid ColumnDefinitions="*, Auto">
+                    <Entry Placeholder="Search by category or place" 
+                           FontFamily="{StaticResource MulishFont}"></Entry>
+                    <Image Grid.Column="1" Source="search.png" HeightRequest="20" />
+                </Grid>
+            </Border>
+
+
+            <CollectionView>
+                <CollectionView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>mono</x:String>
+                        <x:String>monodroid</x:String>
+                        <x:String>monotouch</x:String>
+                        <x:String>monorail</x:String>
+                        <x:String>monodevelop</x:String>
+                        <x:String>monotone</x:String>
+                        <x:String>monopoly</x:String>
+                        <x:String>monomodal</x:String>
+                        <x:String>mononucleosis</x:String>
+                    </x:Array>
+                </CollectionView.ItemsSource>
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Span="2"
+                        Orientation="Horizontal"
+                        HorizontalItemSpacing="6"
+                        VerticalItemSpacing="6"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border HeightRequest="60" Padding="20,4,4,4" BackgroundColor="White" StrokeThickness="0">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="15"/>
+                            </Border.StrokeShape>
+                            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                                <Label VerticalOptions="Center" Text="{Binding .}" TextColor="#887e95"></Label>
+                                <Border Grid.Column="1">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="10"/>
+                                    </Border.StrokeShape>
+                                    <Image WidthRequest="50" BackgroundColor="Blue"></Image>
+                                </Border>
+
+                            </Grid>
+
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+            <Border HeightRequest="200" WidthRequest="200" BackgroundColor="Orange"
+                        Stroke="Red"
+                        StrokeThickness="55" >
+                <Border.StrokeShape>
+                    <Ellipse/>
+                </Border.StrokeShape>
+                <Border StrokeThickness="15" Stroke="White" >
+                    <Border.StrokeShape>
+                        <Ellipse></Ellipse>
+                    </Border.StrokeShape>
+                    <Border StrokeThickness="15" Stroke="Blue" Padding="10">
+                        <Border.StrokeShape>
+                            <Ellipse></Ellipse>
+                        </Border.StrokeShape>
+                        <Image
+                                Source="dotnet_bot.png"
+                                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                                HorizontalOptions="Center" />
+                    </Border>
+                </Border>
+            </Border>
+
+
+
+            <Label
+                Text="Hello, Wo asdf dawsrasdf ld!"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Welcome to .NET Multi-platform App UIadfs "
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Click me"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

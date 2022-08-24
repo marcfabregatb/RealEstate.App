@@ -1,4 +1,4 @@
-﻿namespace RealState.App;
+﻿namespace RealState.App.Views;
 
 public partial class MainPage : ContentPage
 {

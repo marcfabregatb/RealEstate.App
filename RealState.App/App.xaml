@@ -9,6 +9,25 @@
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+
+
+            <x:String x:Key="MulishFont">Mulish</x:String>
+            <x:String x:Key="MulishItalicFont">MulishItalic</x:String>
+            <x:String x:Key="FAbrands400">FAbrands400</x:String>
+            <x:String x:Key="FAregular400">FAregular400</x:String>
+            <x:String x:Key="FAsolid900">FAsolid900</x:String>
+
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="#24293a"></Setter>
+            </Style>
+
+            <Style TargetType="Border">
+                <Setter Property="StrokeThickness" Value="0"></Setter>
+            </Style>
+
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>
