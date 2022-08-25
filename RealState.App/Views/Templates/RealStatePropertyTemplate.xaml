@@ -45,29 +45,29 @@
                            HorizontalOptions="Start" />
                     <HorizontalStackLayout Spacing="14">
                         <HorizontalStackLayout Spacing="8">
-                            <Border>
+                            <Border HeightRequest="30" WidthRequest="30" Padding="5" BackgroundColor="#f6eff3" >
                                 <Border.StrokeShape>
                                     <Ellipse/>
                                 </Border.StrokeShape>
-                                <Image HeightRequest="30" WidthRequest="30" BackgroundColor="#f6eff3" ></Image>
+                                <Image Source="bed" ></Image>
                             </Border>
                             <Label Text="{Binding Rooms}" TextColor="#24293a" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"></Label>
                         </HorizontalStackLayout>
                         <HorizontalStackLayout Spacing="8">
-                            <Border>
+                            <Border HeightRequest="30" WidthRequest="30" Padding="5" BackgroundColor="#f6eff3">
                                 <Border.StrokeShape>
                                     <Ellipse/>
                                 </Border.StrokeShape>
-                                <Image HeightRequest="30" WidthRequest="30" BackgroundColor="#f6eff3" ></Image>
+                                <Image Source="bathtub.png"  ></Image>
                             </Border>
                             <Label Text="{Binding Bathrooms}" TextColor="#24293a" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"></Label>
                         </HorizontalStackLayout>
                         <HorizontalStackLayout Spacing="6">
-                            <Border>
+                            <Border HeightRequest="30" WidthRequest="30" Padding="5" BackgroundColor="#f6eff3">
                                 <Border.StrokeShape>
                                     <Ellipse/>
                                 </Border.StrokeShape>
-                                <Image HeightRequest="30" WidthRequest="30" BackgroundColor="#f6eff3" ></Image>
+                                <Image Source="expand.png" ></Image>
                             </Border>
                             <HorizontalStackLayout Spacing="3">
                                 <Label Text="{Binding SquareMeters}" TextColor="#24293a" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"></Label>

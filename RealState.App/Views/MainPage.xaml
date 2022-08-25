@@ -16,8 +16,8 @@
     </ContentPage.Resources>
     <ScrollView>
         <VerticalStackLayout Spacing="30"
-            Padding="20">
-            <Grid ColumnDefinitions="Auto, *, Auto" >
+            Padding="0,20">
+            <Grid ColumnDefinitions="Auto, *, Auto" Padding="20, 0" >
                 <Border HeightRequest="45" WidthRequest="45" Padding="8" BackgroundColor="White" StrokeThickness="0">
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="10"/>
@@ -51,45 +51,51 @@
 
             </Grid>
 
-            <Border Padding="20,0" BackgroundColor="White">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="10"/>
-                </Border.StrokeShape>
-                <Grid ColumnDefinitions="*, Auto">
-                    <Entry Placeholder="Search by category or place" FontFamily="{StaticResource MulishFont}"></Entry>
-                    <Image Grid.Column="1" Source="search.png" HeightRequest="20" />
-                </Grid>
-            </Border>
+            <Grid Padding="20, 0">
+                <Border Padding="20,0" BackgroundColor="White">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="10"/>
+                    </Border.StrokeShape>
+                    <Grid ColumnDefinitions="*, Auto">
+                        <Entry Placeholder="Search by category or place" FontFamily="{StaticResource MulishFont}"></Entry>
+                        <Image Grid.Column="1" Source="search.png" HeightRequest="20" />
+                    </Grid>
+                </Border>
+            </Grid>
+            
 
 
-            <CollectionView ItemsSource="{Binding Categories}">
-                <CollectionView.ItemsLayout>
-                    <GridItemsLayout Span="2"
-                        Orientation="Horizontal"
-                        HorizontalItemSpacing="10"
-                        VerticalItemSpacing="10"/>
-                </CollectionView.ItemsLayout>
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="models:Category">
-                        <Border HeightRequest="60" Padding="20,4,4,4" BackgroundColor="White" StrokeThickness="0">
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="15"/>
-                            </Border.StrokeShape>
-                            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
-                                <Label VerticalOptions="Center" Text="{Binding Name}" FontSize="15" TextColor="#887e95"></Label>
-                                <Border Grid.Column="1">
-                                    <Border.StrokeShape>
-                                        <RoundRectangle CornerRadius="10"/>
-                                    </Border.StrokeShape>
-                                    <Image WidthRequest="50" Aspect="AspectFill" Source="{Binding Image}"></Image>
-                                </Border>
-                            </Grid>
-                        </Border>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+            <Grid Padding="20, 0 , 0, 0">
+                <CollectionView ItemsSource="{Binding Categories}">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Span="2"
+                                         Orientation="Horizontal"
+                                         HorizontalItemSpacing="10"
+                                         VerticalItemSpacing="10"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Category">
+                            <Border HeightRequest="60" Padding="20,4,4,4" BackgroundColor="White" StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="15"/>
+                                </Border.StrokeShape>
+                                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                                    <Label VerticalOptions="Center" Text="{Binding Name}" FontSize="15" TextColor="#887e95"></Label>
+                                    <Border Grid.Column="1">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="10"/>
+                                        </Border.StrokeShape>
+                                        <Image WidthRequest="50" Aspect="AspectFill" Source="{Binding Image}"></Image>
+                                    </Border>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+            
 
-            <VerticalStackLayout Spacing="6">
+            <VerticalStackLayout Spacing="6" Padding="20,0,0,0">
                 <Label Text="Recommendations" FontAttributes="Bold" FontSize="18"></Label>
                 <CollectionView ItemsSource="{Binding Recommendations}">
                     <CollectionView.ItemsLayout>
@@ -105,7 +111,7 @@
                 </CollectionView>
             </VerticalStackLayout>
 
-            <VerticalStackLayout Spacing="6">
+            <VerticalStackLayout Spacing="6" Padding="20,0">
                 <Label Text="New listings" FontAttributes="Bold" FontSize="18"></Label>
                 <CollectionView ItemsSource="{Binding Recommendations}">
                     <CollectionView.ItemsLayout>
