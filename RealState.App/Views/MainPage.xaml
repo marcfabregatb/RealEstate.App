@@ -4,7 +4,10 @@
              x:Class="RealState.App.Views.MainPage"
              xmlns:viewModels="clr-namespace:RealState.App.ViewModels"
              xmlns:models="clr-namespace:RealState.App.Models"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:templates="clr-namespace:RealState.App.Views.Templates"
              BackgroundColor="#ebecee"
+             Shell.NavBarIsVisible="False"
              x:DataType="viewModels:MainViewModel">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -17,7 +20,7 @@
 
 
             <Grid ColumnDefinitions="Auto, *, Auto" >
-                <Border HeightRequest="40" WidthRequest="40" Padding="5" BackgroundColor="White" StrokeThickness="0">
+                <Border HeightRequest="45" WidthRequest="45" Padding="8" BackgroundColor="White" StrokeThickness="0">
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="10"/>
                     </Border.StrokeShape>
@@ -29,7 +32,7 @@
                 </Border>
 
                 <VerticalStackLayout Grid.Column="1">
-                    <Label HorizontalOptions="Center" Text="Location" FontFamily="{StaticResource MulishFont}"></Label>
+                    <Label HorizontalOptions="Center" Text="Location"></Label>
                     <HorizontalStackLayout HorizontalOptions="Center" Spacing="6">
                         <Label HorizontalOptions="Center" VerticalOptions="Center" Text="Amposta" FontAttributes="Bold" FontSize="16" FontFamily="{StaticResource MulishFont}"></Label>
                         <Image VerticalOptions="Center" Source="chevron_down.png" HeightRequest="15"></Image>
@@ -37,47 +40,39 @@
 
                 </VerticalStackLayout>
 
-                <Border Grid.Column="2" HeightRequest="40" WidthRequest="40" BackgroundColor="White" StrokeThickness="0">
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="10"/>
-                    </Border.StrokeShape>
-                    <Border.Shadow>
-                        <Shadow Opacity="0.3"/>
-                    </Border.Shadow>
-                </Border>
+                <Grid Grid.Column="2" >
+                    <toolkit:AvatarView BorderWidth="0" HeightRequest="45" WidthRequest="45" BackgroundColor="Transparent" CornerRadius="10" ImageSource="exterior5.jpg" >
+                        <toolkit:AvatarView.Shadow>
+                            <Shadow Opacity="0.3"/>
+                        </toolkit:AvatarView.Shadow>
+                    </toolkit:AvatarView>
+                    <Border HorizontalOptions="End" VerticalOptions="Start" WidthRequest="15" HeightRequest="15" BackgroundColor="Red">
+                        <Border.StrokeShape>
+                            <Ellipse/>
+                        </Border.StrokeShape>
+                        <Label Text="6" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="10"></Label>
+                    </Border>
+                </Grid>
+
             </Grid>
 
-            <Border Padding="20,0">
+            <Border Padding="20,0" BackgroundColor="White">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="10"/>
                 </Border.StrokeShape>
                 <Grid ColumnDefinitions="*, Auto">
-                    <Entry Placeholder="Search by category or place" 
-                           FontFamily="{StaticResource MulishFont}"></Entry>
+                    <Entry Placeholder="Search by category or place"></Entry>
                     <Image Grid.Column="1" Source="search.png" HeightRequest="20" />
                 </Grid>
             </Border>
 
 
             <CollectionView ItemsSource="{Binding Categories}">
-                <!--<CollectionView.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>mono</x:String>
-                        <x:String>monodroid</x:String>
-                        <x:String>monotouch</x:String>
-                        <x:String>monorail</x:String>
-                        <x:String>monodevelop</x:String>
-                        <x:String>monotone</x:String>
-                        <x:String>monopoly</x:String>
-                        <x:String>monomodal</x:String>
-                        <x:String>mononucleosis</x:String>
-                    </x:Array>
-                </CollectionView.ItemsSource>-->
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Span="2"
                         Orientation="Horizontal"
-                        HorizontalItemSpacing="6"
-                        VerticalItemSpacing="6"/>
+                        HorizontalItemSpacing="10"
+                        VerticalItemSpacing="10"/>
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:Category">
@@ -86,7 +81,7 @@
                                 <RoundRectangle CornerRadius="15"/>
                             </Border.StrokeShape>
                             <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
-                                <Label VerticalOptions="Center" Text="{Binding Name}" TextColor="#887e95"></Label>
+                                <Label VerticalOptions="Center" Text="{Binding Name}" FontSize="15" TextColor="#887e95"></Label>
                                 <Border Grid.Column="1">
                                     <Border.StrokeShape>
                                         <RoundRectangle CornerRadius="10"/>
@@ -99,13 +94,17 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-            <CollectionView>
+            <CollectionView ItemsSource="{Binding Recommendations}">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Horizontal"
                                        ItemSpacing="6"/>
 
                 </CollectionView.ItemsLayout>
-
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <templates:RealStatePropertyTemplate />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
             </CollectionView>
 
 

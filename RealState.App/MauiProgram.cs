@@ -27,7 +27,7 @@ public static class MauiProgram
                 fonts.AddFont("fa-solid-900.ttf", "FAsolid900");
             });
 
-        builder.Services.AddTransient<IHouseServices, HouseServices>();
+        builder.Services.AddTransient<IRealStatePropertyServices, RealStatePropertyServices>();
         builder.Services.AddTransient<MainViewModel>();
 
         

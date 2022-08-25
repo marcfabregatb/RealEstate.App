@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:RealState.App.Models"
+             x:Class="RealState.App.Views.Templates.RealStatePropertyTemplate"
+             x:DataType="models:RealStateProperty">
+    <VerticalStackLayout>
+        <Border WidthRequest="250" BackgroundColor="White" Padding="8,8,8,12">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="15"/>
+            </Border.StrokeShape>
+            <VerticalStackLayout Spacing="7">
+                <Grid>
+                    <Border>
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="10"/>
+                        </Border.StrokeShape>
+                        <Image BackgroundColor="Coral" WidthRequest="240" HeightRequest="199"></Image>
+                    </Border>
+                </Grid>
+                
+                <StackLayout Padding="5,0" Spacing="8">
+                    <Label Text="{Binding Title}"
+                           MaxLines="1"
+                           LineBreakMode="TailTruncation"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center" 
+                           HorizontalOptions="Start" />
+                    <Label Text="{Binding Address}"
+                           MaxLines="1"
+                           LineBreakMode="TailTruncation"
+                           FontSize="12"
+                           VerticalOptions="Center" 
+                           HorizontalOptions="Start" />
+                    <HorizontalStackLayout Spacing="14">
+                        <HorizontalStackLayout Spacing="8">
+                            <Border>
+                                <Border.StrokeShape>
+                                    <Ellipse/>
+                                </Border.StrokeShape>
+                                <Image HeightRequest="30" WidthRequest="30" BackgroundColor="#f6eff3" ></Image>
+                            </Border>
+                            <Label Text="{Binding Rooms}" TextColor="#24293a" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Spacing="8">
+                            <Border>
+                                <Border.StrokeShape>
+                                    <Ellipse/>
+                                </Border.StrokeShape>
+                                <Image HeightRequest="30" WidthRequest="30" BackgroundColor="#f6eff3" ></Image>
+                            </Border>
+                            <Label Text="{Binding Bathrooms}" TextColor="#24293a" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Spacing="6">
+                            <Border>
+                                <Border.StrokeShape>
+                                    <Ellipse/>
+                                </Border.StrokeShape>
+                                <Image HeightRequest="30" WidthRequest="30" BackgroundColor="#f6eff3" ></Image>
+                            </Border>
+                            <HorizontalStackLayout Spacing="3">
+                                <Label Text="{Binding SquareMeters}" TextColor="#24293a" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                <Label Text="m²" TextColor="#24293a" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                            </HorizontalStackLayout>
+                        </HorizontalStackLayout>
+                    </HorizontalStackLayout>
+                </StackLayout>
+                
+            </VerticalStackLayout>
+            
+        </Border>
+
+    </VerticalStackLayout>
+</ContentView>

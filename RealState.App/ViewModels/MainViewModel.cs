@@ -7,18 +7,20 @@ namespace RealState.App.ViewModels
 {
     public partial class MainViewModel : ObservableObject
     {
-        private readonly IHouseServices _houseServices;
+        private readonly IRealStatePropertyServices _realStatePropertyServices;
         [ObservableProperty] private ObservableCollection<Category> _categories;
+        [ObservableProperty] private ObservableCollection<RealStateProperty> _recommendations;
 
-        public MainViewModel(IHouseServices houseServices)
+        public MainViewModel(IRealStatePropertyServices realStatePropertyServices)
         {
-            _houseServices = houseServices;
+            _realStatePropertyServices = realStatePropertyServices;
             LoadData();
         }
 
         private void LoadData()
         {
-            Categories = new ObservableCollection<Category>(_houseServices.GetCategories());
+            Categories = new ObservableCollection<Category>(_realStatePropertyServices.GetCategories());
+            Recommendations = new ObservableCollection<RealStateProperty>(_realStatePropertyServices.GetRealStateProperties());
         }
     }
 }

@@ -21,6 +21,11 @@
 
             <Style TargetType="Label">
                 <Setter Property="TextColor" Value="#24293a"></Setter>
+                <Setter Property="FontFamily" Value="{StaticResource MulishFont}"></Setter>
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="FontFamily" Value="{StaticResource MulishFont}"></Setter>
             </Style>
 
             <Style TargetType="Border">

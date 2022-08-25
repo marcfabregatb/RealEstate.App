@@ -76,4 +76,10 @@
 	  <Folder Include="Helpers\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <MauiXaml Update="Views\Templates\RealStatePropertyTemplate.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>
