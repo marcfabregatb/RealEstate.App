@@ -2,34 +2,25 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:RealState.App.Models"
-             x:Class="RealState.App.Views.Templates.RealStatePropertyTemplate"
+             x:Class="RealState.App.Views.Templates.NewListingTemplate"
              x:DataType="models:RealStateProperty">
-    <VerticalStackLayout>
-        <Border WidthRequest="250" BackgroundColor="White" Padding="8,8,8,12">
+
+        <Border HeightRequest="100" Padding="6">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="15"/>
             </Border.StrokeShape>
-            <VerticalStackLayout Spacing="7">
+            <HorizontalStackLayout Spacing="7">
                 <Grid>
                     <Border>
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="10"/>
                         </Border.StrokeShape>
-                        <Image Source="{Binding PrincipalImage}" Aspect="AspectFill" WidthRequest="240" HeightRequest="199"></Image>
-                    </Border>
-                    <Border Margin="0,0,0,8" VerticalOptions="End" HorizontalOptions="Center" BackgroundColor="Transparent">
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="10"/>
-                        </Border.StrokeShape>
-                        <Grid HeightRequest="40" WidthRequest="100" Opacity="0.85" BackgroundColor="#9b99ae"  >
-                            <Label TextColor="White" FontSize="16" FontAttributes="Bold" 
-                                   VerticalOptions="Center" HorizontalOptions="Center" 
-                                   Text="{Binding Price, StringFormat='{}{0:c0}'}"></Label>
-                        </Grid>
+                        <Image Source="{Binding PrincipalImage}" Aspect="AspectFill" 
+                               WidthRequest="90" HeightRequest="100"></Image>
                     </Border>
                 </Grid>
                 
-                <StackLayout Padding="5,0" Spacing="8">
+                <StackLayout Padding="5" Spacing="8">
                     <Label Text="{Binding Title}"
                            MaxLines="1"
                            LineBreakMode="TailTruncation"
@@ -43,7 +34,14 @@
                            FontSize="12"
                            VerticalOptions="Center" 
                            HorizontalOptions="Start" />
-                    <HorizontalStackLayout Spacing="14">
+                    <Label Text="{Binding Path=Price, StringFormat='{}{0:c0}'}"
+                           MaxLines="1"
+                           FontAttributes="Bold"
+                           LineBreakMode="TailTruncation"
+                           FontSize="18"
+                           VerticalOptions="Center" 
+                           HorizontalOptions="Start" />
+                    <!--<HorizontalStackLayout Spacing="14">
                         <HorizontalStackLayout Spacing="8">
                             <Border>
                                 <Border.StrokeShape>
@@ -74,12 +72,11 @@
                                 <Label Text="m²" TextColor="#24293a" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"></Label>
                             </HorizontalStackLayout>
                         </HorizontalStackLayout>
-                    </HorizontalStackLayout>
+                    </HorizontalStackLayout>-->
                 </StackLayout>
                 
-            </VerticalStackLayout>
+            </HorizontalStackLayout>
             
         </Border>
 
-    </VerticalStackLayout>
 </ContentView>

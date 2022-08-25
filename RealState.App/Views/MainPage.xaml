@@ -17,8 +17,6 @@
     <ScrollView>
         <VerticalStackLayout Spacing="30"
             Padding="20">
-
-
             <Grid ColumnDefinitions="Auto, *, Auto" >
                 <Border HeightRequest="45" WidthRequest="45" Padding="8" BackgroundColor="White" StrokeThickness="0">
                     <Border.StrokeShape>
@@ -30,16 +28,13 @@
                     <Image
                         Source="cog.png" />
                 </Border>
-
                 <VerticalStackLayout Grid.Column="1">
                     <Label HorizontalOptions="Center" Text="Location"></Label>
                     <HorizontalStackLayout HorizontalOptions="Center" Spacing="6">
                         <Label HorizontalOptions="Center" VerticalOptions="Center" Text="Amposta" FontAttributes="Bold" FontSize="16" FontFamily="{StaticResource MulishFont}"></Label>
                         <Image VerticalOptions="Center" Source="chevron_down.png" HeightRequest="15"></Image>
                     </HorizontalStackLayout>
-
                 </VerticalStackLayout>
-
                 <Grid Grid.Column="2" >
                     <toolkit:AvatarView BorderWidth="0" HeightRequest="45" WidthRequest="45" BackgroundColor="Transparent" CornerRadius="10" ImageSource="exterior5.jpg" >
                         <toolkit:AvatarView.Shadow>
@@ -61,7 +56,7 @@
                     <RoundRectangle CornerRadius="10"/>
                 </Border.StrokeShape>
                 <Grid ColumnDefinitions="*, Auto">
-                    <Entry Placeholder="Search by category or place"></Entry>
+                    <Entry Placeholder="Search by category or place" FontFamily="{StaticResource MulishFont}"></Entry>
                     <Image Grid.Column="1" Source="search.png" HeightRequest="20" />
                 </Grid>
             </Border>
@@ -94,63 +89,38 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-            <CollectionView ItemsSource="{Binding Recommendations}">
-                <CollectionView.ItemsLayout>
-                    <LinearItemsLayout Orientation="Horizontal"
-                                       ItemSpacing="6"/>
+            <VerticalStackLayout Spacing="6">
+                <Label Text="Recommendations" FontAttributes="Bold" FontSize="18"></Label>
+                <CollectionView ItemsSource="{Binding Recommendations}">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal"
+                                           ItemSpacing="8"/>
 
-                </CollectionView.ItemsLayout>
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <templates:RealStatePropertyTemplate />
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <templates:RealStatePropertyTemplate />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
 
+            <VerticalStackLayout Spacing="6">
+                <Label Text="New listings" FontAttributes="Bold" FontSize="18"></Label>
+                <CollectionView ItemsSource="{Binding Recommendations}">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical"
+                                           ItemSpacing="8"/>
 
-            <Border HeightRequest="200" WidthRequest="200" BackgroundColor="Orange"
-                        Stroke="Red"
-                        StrokeThickness="55" >
-                <Border.StrokeShape>
-                    <Ellipse/>
-                </Border.StrokeShape>
-                <Border StrokeThickness="15" Stroke="White" >
-                    <Border.StrokeShape>
-                        <Ellipse></Ellipse>
-                    </Border.StrokeShape>
-                    <Border StrokeThickness="15" Stroke="Blue" Padding="10">
-                        <Border.StrokeShape>
-                            <Ellipse></Ellipse>
-                        </Border.StrokeShape>
-                        <Image
-                                Source="dotnet_bot.png"
-                                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                                HorizontalOptions="Center" />
-                    </Border>
-                </Border>
-            </Border>
-
-
-
-            <Label
-                Text="Hello, Wo asdf dawsrasdf ld!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UIadfs "
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <!--<Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />-->
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <templates:NewListingTemplate />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+            
 
         </VerticalStackLayout>
     </ScrollView>

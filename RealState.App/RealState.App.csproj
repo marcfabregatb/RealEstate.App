@@ -53,9 +53,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Fonts\fa-brands-400.ttf" />
-	  <None Remove="Resources\Fonts\fa-regular-400.ttf" />
-	  <None Remove="Resources\Fonts\fa-solid-900.ttf" />
 	  <None Remove="Resources\Fonts\Mulish-Italic.ttf" />
 	  <None Remove="Resources\Fonts\Mulish.ttf" />
 	  <None Remove="Resources\Images\chevron_down.svg" />
@@ -77,6 +74,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Views\Templates\NewListingTemplate.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Templates\RealStatePropertyTemplate.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
