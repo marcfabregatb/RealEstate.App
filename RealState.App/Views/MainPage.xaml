@@ -105,7 +105,7 @@
                     </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <templates:RealStatePropertyTemplate />
+                            <templates:RecommendationsTemplate />
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>

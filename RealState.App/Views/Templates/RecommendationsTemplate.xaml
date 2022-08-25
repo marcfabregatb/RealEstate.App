@@ -2,7 +2,7 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:RealState.App.Models"
-             x:Class="RealState.App.Views.Templates.RealStatePropertyTemplate"
+             x:Class="RealState.App.Views.Templates.RecommendationsTemplate"
              x:DataType="models:RealStateProperty">
     <VerticalStackLayout>
         <Border WidthRequest="250" BackgroundColor="White" Padding="8,8,8,12">
@@ -21,7 +21,7 @@
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="10"/>
                         </Border.StrokeShape>
-                        <Grid HeightRequest="40" WidthRequest="100" Opacity="0.85" BackgroundColor="#9b99ae"  >
+                        <Grid HeightRequest="35" WidthRequest="100" Opacity="0.85" BackgroundColor="#9b99ae"  >
                             <Label TextColor="White" FontSize="16" FontAttributes="Bold" 
                                    VerticalOptions="Center" HorizontalOptions="Center" 
                                    Text="{Binding Price, StringFormat='{}{0:c0}'}"></Label>
@@ -45,7 +45,7 @@
                            HorizontalOptions="Start" />
                     <HorizontalStackLayout Spacing="14">
                         <HorizontalStackLayout Spacing="8">
-                            <Border HeightRequest="30" WidthRequest="30" Padding="5" BackgroundColor="#f6eff3" >
+                            <Border HeightRequest="30" WidthRequest="30" Padding="6" BackgroundColor="#f6eff3" >
                                 <Border.StrokeShape>
                                     <Ellipse/>
                                 </Border.StrokeShape>
@@ -54,7 +54,7 @@
                             <Label Text="{Binding Rooms}" TextColor="#24293a" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"></Label>
                         </HorizontalStackLayout>
                         <HorizontalStackLayout Spacing="8">
-                            <Border HeightRequest="30" WidthRequest="30" Padding="5" BackgroundColor="#f6eff3">
+                            <Border HeightRequest="30" WidthRequest="30" Padding="6" BackgroundColor="#f6eff3">
                                 <Border.StrokeShape>
                                     <Ellipse/>
                                 </Border.StrokeShape>
@@ -63,7 +63,7 @@
                             <Label Text="{Binding Bathrooms}" TextColor="#24293a" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"></Label>
                         </HorizontalStackLayout>
                         <HorizontalStackLayout Spacing="6">
-                            <Border HeightRequest="30" WidthRequest="30" Padding="5" BackgroundColor="#f6eff3">
+                            <Border HeightRequest="30" WidthRequest="30" Padding="6" BackgroundColor="#f6eff3">
                                 <Border.StrokeShape>
                                     <Ellipse/>
                                 </Border.StrokeShape>
