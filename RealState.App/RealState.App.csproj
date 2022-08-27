@@ -77,13 +77,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\RealStatePropertyDetailPage.xaml.cs">
+	    <DependentUpon>RealStatePropertyDetailPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\Templates\RecommendationsTemplate.xaml.cs">
 	    <DependentUpon>RecommendationsTemplate.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\RealStatePropertyDetail.xaml">
+	  <MauiXaml Update="Views\RealStatePropertyDetailPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Templates\NewListingTemplate.xaml">

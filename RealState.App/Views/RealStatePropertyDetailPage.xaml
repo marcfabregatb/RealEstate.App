@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:RealState.App.ViewModels"
+             x:Class="RealState.App.Views.RealStatePropertyDetailPage"
+             Title="RealStatePropertyDetail" 
+             x:DataType="viewModels:RealStatePropertyDetailViewModel">
+    <VerticalStackLayout>
+        <Border>
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10"/>
+            </Border.StrokeShape>
+<Label Text="{Binding RealStateProperty.Title}"></Label>
+        </Border>
+    </VerticalStackLayout>
+</ContentPage>

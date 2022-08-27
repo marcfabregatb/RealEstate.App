@@ -29,6 +29,7 @@ public static class MauiProgram
 
         builder.Services.AddTransient<IRealStatePropertyServices, RealStatePropertyServices>();
         builder.Services.AddTransient<MainViewModel>();
+        builder.Services.AddTransient<RealStatePropertyDetailViewModel>();
 
         
 

@@ -97,7 +97,10 @@
 
             <VerticalStackLayout Spacing="6" Padding="20,0,0,0">
                 <Label Text="Recommendations" FontAttributes="Bold" FontSize="18"></Label>
-                <CollectionView ItemsSource="{Binding Recommendations}">
+                <CollectionView x:Name="RecommendationCollectionView" ItemsSource="{Binding Recommendations}" 
+                                SelectionMode="Single" SelectionChanged="RecommendationCollectionView_OnSelectionChanged"
+                                SelectionChangedCommand="{Binding NavigateToDetailCommand}" 
+                                SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference RecommendationCollectionView} }">
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout Orientation="Horizontal"
                                            ItemSpacing="8"/>
