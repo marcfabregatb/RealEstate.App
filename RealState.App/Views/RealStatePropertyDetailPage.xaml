@@ -90,11 +90,11 @@
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="10" />
                                 </Border.StrokeShape>
-                                <Image Source="{Binding RealStateProperty.RealtorAgent.Image}" 
+                                <Image Source="{Binding RealStateProperty.Agent.Image}" 
                                HeightRequest="70" WidthRequest="70" Aspect="AspectFill"></Image>
                             </Border>
                             <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="8">
-                                <Label Text="{Binding RealStateProperty.RealtorAgent.Name}"
+                                <Label Text="{Binding RealStateProperty.Agent.Name}"
                                FontSize="16"
                                FontAttributes="Bold"></Label>
                                 <Label Text="View Agent Profile"></Label>
