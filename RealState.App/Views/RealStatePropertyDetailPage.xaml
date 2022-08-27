@@ -28,99 +28,173 @@
             </Setter>
         </Style>
     </ContentPage.Resources>
-    <Grid>
-        <VerticalStackLayout>
-            <Grid RowDefinitions="Auto" Padding="10,10,10,0">
-                <Border>
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="20"/>
-                    </Border.StrokeShape>
-                    <CarouselView HeightRequest="330" ItemsSource="{Binding RealStateProperty.Images}"
+    <ScrollView IsEnabled="True">
+        <Grid Padding="0,0,0,20">
+            <VerticalStackLayout>
+                <Grid RowDefinitions="Auto" Padding="10,10,10,0">
+                    <Border>
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <CarouselView HeightRequest="330" ItemsSource="{Binding RealStateProperty.Images}"
                               IndicatorView="IndicatorView">
-                        <CarouselView.ItemTemplate>
-                            <DataTemplate>
-                                <Image Source="{Binding .}" Aspect="AspectFill" 
+                            <CarouselView.ItemTemplate>
+                                <DataTemplate>
+                                    <Image Source="{Binding .}" Aspect="AspectFill" 
                                        VerticalOptions="Fill" HorizontalOptions="Fill" ></Image>
-                            </DataTemplate>
-                        </CarouselView.ItemTemplate>
-                    </CarouselView>
-                </Border>
-                <Border Margin="0,0,0,10" VerticalOptions="End" HorizontalOptions="Center" BackgroundColor="Transparent">
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="10"/>
-                    </Border.StrokeShape>
-                    <Grid HeightRequest="50" WidthRequest="120" Opacity="0.85" BackgroundColor="#9b99ae"  >
-                        <VerticalStackLayout>
-                            <Label TextColor="White" FontSize="14"
+                                </DataTemplate>
+                            </CarouselView.ItemTemplate>
+                        </CarouselView>
+                    </Border>
+                    <Border Margin="0,0,0,10" VerticalOptions="End" HorizontalOptions="Center" BackgroundColor="Transparent">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="10"/>
+                        </Border.StrokeShape>
+                        <Grid HeightRequest="50" WidthRequest="120" Opacity="0.85" BackgroundColor="#9b99ae"  >
+                            <VerticalStackLayout>
+                                <Label TextColor="White" FontSize="14"
                                     VerticalOptions="Center" HorizontalOptions="Center" 
                                     Text="Price"></Label>
-                            <Label TextColor="White" FontSize="18" FontAttributes="Bold" 
+                                <Label TextColor="White" FontSize="18" FontAttributes="Bold" 
                                     VerticalOptions="Center" HorizontalOptions="Center" 
                                     Text="{Binding RealStateProperty.Price, StringFormat='{}{0:c0}'}"></Label>
-                        </VerticalStackLayout>
-                    </Grid>
-                </Border>
-            </Grid>
-            <IndicatorView x:Name="IndicatorView"
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <IndicatorView x:Name="IndicatorView"
                    IndicatorsShape="Circle"
                    IndicatorColor="#c4c4c4"
                    SelectedIndicatorColor="#2d335b"
                    HorizontalOptions="Center"
                    VerticalOptions="End"
                    Margin="0,8,0,15" >
-                <IndicatorView.IndicatorTemplate>
-                    <DataTemplate>
-                        <Border Style="{StaticResource IndicatorViewStyle}" HeightRequest="10"  >
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="30" />
-                            </Border.StrokeShape>
-                        </Border>
-                    </DataTemplate>
-                </IndicatorView.IndicatorTemplate>
-            </IndicatorView>
+                    <IndicatorView.IndicatorTemplate>
+                        <DataTemplate>
+                            <Border Style="{StaticResource IndicatorViewStyle}" HeightRequest="10"  >
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="30" />
+                                </Border.StrokeShape>
+                            </Border>
+                        </DataTemplate>
+                    </IndicatorView.IndicatorTemplate>
+                </IndicatorView>
 
-            <VerticalStackLayout Padding="25,0">
-                <Border Padding="4">
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="15" />
-                    </Border.StrokeShape>
-                    <HorizontalStackLayout Spacing="20">
-                        <Border >
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="10" />
-                            </Border.StrokeShape>
-                            <Image Source="{Binding RealStateProperty.RealtorAgent.Image}" 
+                <VerticalStackLayout Padding="25,0" Spacing="15">
+                    <Border Padding="4">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="15" />
+                        </Border.StrokeShape>
+                        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="20" >
+                            <Border >
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Image Source="{Binding RealStateProperty.RealtorAgent.Image}" 
                                HeightRequest="70" WidthRequest="70" Aspect="AspectFill"></Image>
-                        </Border>
-                        <VerticalStackLayout VerticalOptions="Center" Spacing="8">
-                            <Label Text="{Binding RealStateProperty.RealtorAgent.Name}"
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="8">
+                                <Label Text="{Binding RealStateProperty.RealtorAgent.Name}"
                                FontSize="16"
                                FontAttributes="Bold"></Label>
-                            <Label Text="View Agent Profile"></Label>
-                        </VerticalStackLayout>
-                    </HorizontalStackLayout>
+                                <Label Text="View Agent Profile"></Label>
+                            </VerticalStackLayout>
+                            <Image Grid.Column="3" Source="chevron_forward.png" HeightRequest="20" Margin="15"
+                               VerticalOptions="Center" HorizontalOptions="End"></Image>
+                        </Grid>
 
-                </Border>
+                    </Border>
+
+
+                    <Border Padding="5">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="15" />
+                        </Border.StrokeShape>
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="15" Padding="10">
+                            <VerticalStackLayout Spacing="6">
+                                <Label Text="{Binding RealStateProperty.Title}"
+                                       FontSize="24"
+                                       FontAttributes="Bold" MaxLines="1"></Label>
+                                <Label Text="{Binding RealStateProperty.Address}"
+                                       MaxLines="1"
+                                       LineBreakMode="TailTruncation"
+                                       FontSize="12"
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Start" />
+                            </VerticalStackLayout>
+
+                            <HorizontalStackLayout Spacing="14">
+                                <HorizontalStackLayout Spacing="8">
+                                    <Border HeightRequest="30" WidthRequest="30" Padding="6" BackgroundColor="#f6eff3" >
+                                        <Border.StrokeShape>
+                                            <Ellipse/>
+                                        </Border.StrokeShape>
+                                        <Image Source="bed" ></Image>
+                                    </Border>
+                                    <Label Text="{Binding RealStateProperty.Rooms}" TextColor="#24293a" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout Spacing="8">
+                                    <Border HeightRequest="30" WidthRequest="30" Padding="6" BackgroundColor="#f6eff3">
+                                        <Border.StrokeShape>
+                                            <Ellipse/>
+                                        </Border.StrokeShape>
+                                        <Image Source="bathtub.png"  ></Image>
+                                    </Border>
+                                    <Label Text="{Binding RealStateProperty.Bathrooms}" TextColor="#24293a" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout Spacing="6">
+                                    <Border HeightRequest="30" WidthRequest="30" Padding="6" BackgroundColor="#f6eff3">
+                                        <Border.StrokeShape>
+                                            <Ellipse/>
+                                        </Border.StrokeShape>
+                                        <Image Source="expand.png" ></Image>
+                                    </Border>
+                                    <HorizontalStackLayout Spacing="3">
+                                        <Label Text="{Binding RealStateProperty.SquareMeters}" TextColor="#24293a" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                        <Label Text="m²" TextColor="#24293a" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                    </HorizontalStackLayout>
+                                </HorizontalStackLayout>
+                            </HorizontalStackLayout>
+                            <Label Text="{Binding RealStateProperty.Description}" ></Label>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Grid ColumnDefinitions="*, Auto"  >
+                        <HorizontalStackLayout Spacing="8">
+                            <Image HeightRequest="20" Source="home_outline.png"></Image>
+                            <Label Text="Request a House Tour" VerticalTextAlignment="Center"
+                                   TextDecorations="Underline"></Label>
+                        </HorizontalStackLayout>
+                        <Button Grid.Column="1" BackgroundColor="#e97e71" Text="Ask a question" HeightRequest="40">
+                            <Button.Background>
+                                <!-- StartPoint defaults to (0,0) -->
+                                <LinearGradientBrush EndPoint="1,0">
+                                    <GradientStop Color="#ff5e5d"
+                                                  Offset="0.1" />
+                                    <GradientStop Color="#bf4746"
+                                                  Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                    </Grid>
+                </VerticalStackLayout>
+                
             </VerticalStackLayout>
 
-        </VerticalStackLayout>
-
-        <Border HeightRequest="45" WidthRequest="45" Padding="8" BackgroundColor="White" Opacity="0.8" StrokeThickness="0"
+            <Border HeightRequest="40" WidthRequest="40" Padding="8" BackgroundColor="White" Opacity="0.8" StrokeThickness="0"
                 VerticalOptions="Start" HorizontalOptions="Start" Margin="25">
-            <Border.GestureRecognizers>
-                <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
-            </Border.GestureRecognizers>
-            <Border.StrokeShape>
-                <RoundRectangle CornerRadius="10"/>
-            </Border.StrokeShape>
-            <Border.Shadow>
-                <Shadow Opacity="0.3"/>
-            </Border.Shadow>
-            <Image
-                Source="cog.png" />
-        </Border>
-    </Grid>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
+                </Border.GestureRecognizers>
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow Opacity="0.3"/>
+                </Border.Shadow>
+                <Image HeightRequest="20"
+                Source="chevron_back.png" />
+            </Border>
 
-
-
+        </Grid>
+    </ScrollView>
 </ContentPage>
