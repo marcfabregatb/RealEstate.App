@@ -22,6 +22,12 @@ namespace RealState.App.ViewModels
         {
             Categories = new ObservableCollection<Category>(_realStatePropertyServices.GetCategories());
             Recommendations = new ObservableCollection<RealStateProperty>(_realStatePropertyServices.GetRealStateProperties());
+            var navigationParameter = new Dictionary<string, object>
+            {
+                { "RealStateProperty", Recommendations.FirstOrDefault() }
+            };
+            //Shell.Current.GoToAsync($"RealStatePropertyDetailPage", navigationParameter);
+
         }
 
         [RelayCommand]

@@ -62,6 +62,8 @@
 	  <None Remove="Resources\Images\expand.svg" />
 	  <None Remove="Resources\Images\exterior7.jpg" />
 	  <None Remove="Resources\Images\kitchen7.jpeg" />
+	  <None Remove="Resources\Images\realtor1.jpg" />
+	  <None Remove="Resources\Images\realtor2.jpg" />
 	  <None Remove="Resources\Images\studio.jpg" />
 	  <None Remove="Resources\Images\townhouse.jpg" />
 	  <None Remove="Resources\Images\urban.jpg" />

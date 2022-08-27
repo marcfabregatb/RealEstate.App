@@ -10,7 +10,7 @@ namespace RealState.App.ViewModels
 
         public RealStatePropertyDetailViewModel()
         {
-            var a = 0;
+
         }
 
 

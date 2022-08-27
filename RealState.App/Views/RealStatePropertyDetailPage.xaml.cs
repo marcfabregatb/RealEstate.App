@@ -9,4 +9,9 @@ public partial class RealStatePropertyDetailPage : ContentPage
 		InitializeComponent();
         BindingContext = MauiProgram.GetService<RealStatePropertyDetailViewModel>();
     }
+
+    private void TapGestureRecognizer_OnTapped(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("..");
+    }
 }

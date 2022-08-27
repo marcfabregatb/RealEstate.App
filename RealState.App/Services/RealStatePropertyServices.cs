@@ -6,8 +6,8 @@ namespace RealState.App.Services
     {
         public List<RealStateProperty> GetRealStateProperties()
         {
-            var realtor = new RealtorAgent() { Name = "Mia Saleta" };
-            var realtor2 = new RealtorAgent() { Name = "Valentina Crossfusta" };
+            var realtor = new RealtorAgent() { Name = "Mia Saleta", Image = "Realtor1.jpg"};
+            var realtor2 = new RealtorAgent() { Name = "Valentina Crossfusta", Image = "Realtor2.jpg"};
             var categories = GetCategories();
 
             var realStateProperty = new List<RealStateProperty>()

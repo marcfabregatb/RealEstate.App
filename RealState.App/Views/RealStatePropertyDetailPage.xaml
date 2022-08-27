@@ -4,13 +4,123 @@
              xmlns:viewModels="clr-namespace:RealState.App.ViewModels"
              x:Class="RealState.App.Views.RealStatePropertyDetailPage"
              Title="RealStatePropertyDetail" 
+             BackgroundColor="#ebecee"
+             Shell.NavBarIsVisible="False"
+             Shell.PresentationMode="Animated"
              x:DataType="viewModels:RealStatePropertyDetailViewModel">
-    <VerticalStackLayout>
-        <Border>
+    <ContentPage.Resources>
+        <Style x:Key="IndicatorViewStyle" TargetType="Border">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup>
+                        <VisualState Name="Normal" >
+                            <VisualState.Setters>
+                                <Setter Property="WidthRequest" Value="10"></Setter>
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="WidthRequest" Value="30"></Setter>
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+    <Grid>
+        <VerticalStackLayout>
+            <Grid RowDefinitions="Auto" Padding="10,10,10,0">
+                <Border>
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="20"/>
+                    </Border.StrokeShape>
+                    <CarouselView HeightRequest="330" ItemsSource="{Binding RealStateProperty.Images}"
+                              IndicatorView="IndicatorView">
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding .}" Aspect="AspectFill" 
+                                       VerticalOptions="Fill" HorizontalOptions="Fill" ></Image>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                </Border>
+                <Border Margin="0,0,0,10" VerticalOptions="End" HorizontalOptions="Center" BackgroundColor="Transparent">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="10"/>
+                    </Border.StrokeShape>
+                    <Grid HeightRequest="50" WidthRequest="120" Opacity="0.85" BackgroundColor="#9b99ae"  >
+                        <VerticalStackLayout>
+                            <Label TextColor="White" FontSize="14"
+                                    VerticalOptions="Center" HorizontalOptions="Center" 
+                                    Text="Price"></Label>
+                            <Label TextColor="White" FontSize="18" FontAttributes="Bold" 
+                                    VerticalOptions="Center" HorizontalOptions="Center" 
+                                    Text="{Binding RealStateProperty.Price, StringFormat='{}{0:c0}'}"></Label>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+            </Grid>
+            <IndicatorView x:Name="IndicatorView"
+                   IndicatorsShape="Circle"
+                   IndicatorColor="#c4c4c4"
+                   SelectedIndicatorColor="#2d335b"
+                   HorizontalOptions="Center"
+                   VerticalOptions="End"
+                   Margin="0,8,0,15" >
+                <IndicatorView.IndicatorTemplate>
+                    <DataTemplate>
+                        <Border Style="{StaticResource IndicatorViewStyle}" HeightRequest="10"  >
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="30" />
+                            </Border.StrokeShape>
+                        </Border>
+                    </DataTemplate>
+                </IndicatorView.IndicatorTemplate>
+            </IndicatorView>
+
+            <VerticalStackLayout Padding="25,0">
+                <Border Padding="4">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="15" />
+                    </Border.StrokeShape>
+                    <HorizontalStackLayout Spacing="20">
+                        <Border >
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="10" />
+                            </Border.StrokeShape>
+                            <Image Source="{Binding RealStateProperty.RealtorAgent.Image}" 
+                               HeightRequest="70" WidthRequest="70" Aspect="AspectFill"></Image>
+                        </Border>
+                        <VerticalStackLayout VerticalOptions="Center" Spacing="8">
+                            <Label Text="{Binding RealStateProperty.RealtorAgent.Name}"
+                               FontSize="16"
+                               FontAttributes="Bold"></Label>
+                            <Label Text="View Agent Profile"></Label>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+
+                </Border>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+
+        <Border HeightRequest="45" WidthRequest="45" Padding="8" BackgroundColor="White" Opacity="0.8" StrokeThickness="0"
+                VerticalOptions="Start" HorizontalOptions="Start" Margin="25">
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
+            </Border.GestureRecognizers>
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="10"/>
             </Border.StrokeShape>
-<Label Text="{Binding RealStateProperty.Title}"></Label>
+            <Border.Shadow>
+                <Shadow Opacity="0.3"/>
+            </Border.Shadow>
+            <Image
+                Source="cog.png" />
         </Border>
-    </VerticalStackLayout>
+    </Grid>
+
+
+
 </ContentPage>

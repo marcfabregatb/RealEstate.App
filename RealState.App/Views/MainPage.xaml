@@ -8,6 +8,7 @@
              xmlns:templates="clr-namespace:RealState.App.Views.Templates"
              BackgroundColor="#ebecee"
              Shell.NavBarIsVisible="False"
+             Shell.PresentationMode="Animated"
              x:DataType="viewModels:MainViewModel">
     <ContentPage.Resources>
         <ResourceDictionary>
