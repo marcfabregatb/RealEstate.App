@@ -11,6 +11,7 @@
             </ResourceDictionary.MergedDictionaries>
 
 
+            <Color x:Key="AccentColor">#c24847</Color>
 
             <x:String x:Key="MulishFont">Mulish</x:String>
             <x:String x:Key="MulishItalicFont">MulishItalic</x:String>

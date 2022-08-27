@@ -42,7 +42,7 @@
                             <Shadow Opacity="0.3"/>
                         </toolkit:AvatarView.Shadow>
                     </toolkit:AvatarView>
-                    <Border HorizontalOptions="End" VerticalOptions="Start" WidthRequest="15" HeightRequest="15" BackgroundColor="Red">
+                    <Border HorizontalOptions="End" VerticalOptions="Start" WidthRequest="15" HeightRequest="15" BackgroundColor="{StaticResource AccentColor}">
                         <Border.StrokeShape>
                             <Ellipse/>
                         </Border.StrokeShape>
@@ -99,7 +99,7 @@
             <VerticalStackLayout Spacing="6" Padding="20,0,0,0">
                 <Label Text="Recommendations" FontAttributes="Bold" FontSize="18"></Label>
                 <CollectionView x:Name="RecommendationCollectionView" ItemsSource="{Binding Recommendations}" 
-                                SelectionMode="Single" SelectionChanged="RecommendationCollectionView_OnSelectionChanged"
+                                SelectionMode="Single" SelectionChanged="CollectionView_OnSelectionChanged"
                                 SelectionChangedCommand="{Binding NavigateToDetailCommand}" 
                                 SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference RecommendationCollectionView} }">
                     <CollectionView.ItemsLayout>
@@ -117,11 +117,13 @@
 
             <VerticalStackLayout Spacing="6" Padding="20,0">
                 <Label Text="New listings" FontAttributes="Bold" FontSize="18"></Label>
-                <CollectionView ItemsSource="{Binding Recommendations}">
+                <CollectionView x:Name="NewListings" ItemsSource="{Binding Recommendations}"
+                                SelectionMode="Single" SelectionChanged="CollectionView_OnSelectionChanged"
+                                SelectionChangedCommand="{Binding NavigateToDetailCommand}" 
+                                SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference NewListings} }">
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout Orientation="Vertical"
                                            ItemSpacing="8"/>
-
                     </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
@@ -130,9 +132,6 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </VerticalStackLayout>
-            
-
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>

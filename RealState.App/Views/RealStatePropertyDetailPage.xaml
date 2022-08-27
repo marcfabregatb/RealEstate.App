@@ -164,9 +164,8 @@
                             <Label Text="Request a House Tour" VerticalTextAlignment="Center"
                                    TextDecorations="Underline"></Label>
                         </HorizontalStackLayout>
-                        <Button Grid.Column="1" BackgroundColor="#e97e71" Text="Ask a question" HeightRequest="40">
+                        <Button Grid.Column="1" Text="Ask a question" HeightRequest="40">
                             <Button.Background>
-                                <!-- StartPoint defaults to (0,0) -->
                                 <LinearGradientBrush EndPoint="1,0">
                                     <GradientStop Color="#ff5e5d"
                                                   Offset="0.1" />
