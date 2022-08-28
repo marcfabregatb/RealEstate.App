@@ -39,7 +39,7 @@
                         <CarouselView HeightRequest="330" ItemsSource="{Binding RealEstateProperty.Images}"
                               IndicatorView="IndicatorView">
                             <CarouselView.ItemTemplate>
-                                <DataTemplate>
+                                <DataTemplate x:DataType="x:String">
                                     <Image Source="{Binding .}" Aspect="AspectFill" 
                                        VerticalOptions="Fill" HorizontalOptions="Fill" ></Image>
                                 </DataTemplate>

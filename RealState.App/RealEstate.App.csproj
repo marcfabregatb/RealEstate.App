@@ -12,7 +12,8 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>RealEstate.App</ApplicationTitle>
+		<ApplicationTitle>Real Estate</ApplicationTitle>
+		
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.realestate.app</ApplicationId>
