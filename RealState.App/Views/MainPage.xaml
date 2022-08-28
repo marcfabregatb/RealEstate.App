@@ -37,7 +37,7 @@
                     </HorizontalStackLayout>
                 </VerticalStackLayout>
                 <Grid Grid.Column="2" >
-                    <toolkit:AvatarView BorderWidth="0" HeightRequest="45" WidthRequest="45" BackgroundColor="Transparent" CornerRadius="10" ImageSource="exterior5.jpg" >
+                    <toolkit:AvatarView BorderWidth="0" HeightRequest="45" WidthRequest="45" BackgroundColor="Transparent" CornerRadius="10" ImageSource="realtor2.jpg" >
                         <toolkit:AvatarView.Shadow>
                             <Shadow Opacity="0.3"/>
                         </toolkit:AvatarView.Shadow>
