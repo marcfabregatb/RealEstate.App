@@ -6,8 +6,10 @@ namespace RealState.App.Services
     {
         public List<RealStateProperty> GetRealStateProperties()
         {
-            var agent1 = new Agent() { Name = "Mia Saleta", Image = "Realtor1.jpg"};
-            var agent2 = new Agent() { Name = "Valentina Crossfusta", Image = "Realtor2.jpg"};
+            var realtorDescription =
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae justo eget magna fermentum iaculis. Sit amet nulla facilisi morbi tempus iaculis urna id volutpat. Viverra maecenas accumsan lacus vel facilisis.  \r\n\r\nAdipiscing bibendum est ultricies integer. Vitae tempus quam pellentesque nec nam aliquam sem et tortor. Fusce ut placerat orci nulla pellentesque dignissim enim sit.  Arcu risus quis varius quam quisque. Accumsan tortor posuere ac ut consequat semper viverra. ";
+            var agent1 = new Agent() { Id = 1, Name = "Mia Saleta", Image = "Realtor1.jpg", Description = realtorDescription };
+            var agent2 = new Agent() { Id = 2, Name = "Valentina Crossfusta", Image = "Realtor2.jpg", Description = realtorDescription };
             var categories = GetCategories();
 
             var realStateProperty = new List<RealStateProperty>()
@@ -125,6 +127,12 @@ namespace RealState.App.Services
 
 
             return realStateProperty;
+        }
+
+        public List<RealStateProperty> GetAgentProperties(int agentId)
+        {
+            var properties = GetRealStateProperties().Where(x => x.Agent.Id == agentId).ToList();
+            return properties;
         }
 
         public List<Category> GetCategories()

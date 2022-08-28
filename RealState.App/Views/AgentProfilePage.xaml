@@ -1,12 +1,118 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:RealState.App.ViewModels"
+             xmlns:templates="clr-namespace:RealState.App.Views.Templates"
              x:Class="RealState.App.Views.AgentProfilePage"
-             Title="AgentProfilePage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="AgentProfilePage"
+             BackgroundColor="#ebecee"
+             Shell.NavBarIsVisible="False"
+             Shell.PresentationMode="Animated"
+             x:DataType="viewModels:AgentProfileViewModel">
+    <ScrollView>
+        <Grid>
+
+            <VerticalStackLayout >
+                <VerticalStackLayout Padding="20,35,20,20" Spacing="30">
+                    <Label Text="Agent profile" HorizontalOptions="Center" FontSize="16"></Label>
+                    <Border Padding="8">
+
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="15" />
+                        </Border.StrokeShape>
+                        <VerticalStackLayout>
+                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="20" >
+                                <Border >
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="10" />
+                                    </Border.StrokeShape>
+                                    <Image Source="{Binding AgentProfile.Image}" 
+                                       HeightRequest="70" WidthRequest="70" Aspect="AspectFill"></Image>
+                                </Border>
+                                <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="8">
+                                    <Label Text="{Binding AgentProfile.Name}"
+                                       FontSize="16"
+                                       FontAttributes="Bold"></Label>
+                                    <HorizontalStackLayout>
+                                        <Image Source="pin.png" HeightRequest="18"></Image>
+                                        <Label Text="Edmonton" TextColor="#9196a8" FontAttributes="Italic"></Label>
+                                    </HorizontalStackLayout>
+                                    
+                                </VerticalStackLayout>
+                            </Grid>
+                            <VerticalStackLayout Padding="10" Spacing="10">
+                                <HorizontalStackLayout Spacing="8">
+                                    <Border HeightRequest="30" WidthRequest="30" Padding="6" BackgroundColor="#f6eff3">
+                                        <Border.StrokeShape>
+                                            <Ellipse/>
+                                        </Border.StrokeShape>
+                                        <Image Source="call.png"  ></Image>
+                                    </Border>
+                                    <Label Text="99999999" TextColor="#24293a"  VerticalOptions="Center"></Label>
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout Spacing="8">
+                                    <Border HeightRequest="30" WidthRequest="30" Padding="6" BackgroundColor="#f6eff3">
+                                        <Border.StrokeShape>
+                                            <Ellipse/>
+                                        </Border.StrokeShape>
+                                        <Image Source="home.png"  ></Image>
+                                    </Border>
+                                    <Label Text="10 listings" TextColor="#24293a" VerticalOptions="Center"></Label>
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+
+                            <Label Text="{Binding AgentProfile.Description}"></Label>
+                            <Button Margin="15" Text="Ask a question" HeightRequest="40" WidthRequest="150" >
+                                <Button.Background>
+                                    <LinearGradientBrush EndPoint="1,0">
+                                        <GradientStop Color="#ff5e5d"
+                                                  Offset="0.1" />
+                                        <GradientStop Color="#bf4746"
+                                                  Offset="1.0" />
+                                    </LinearGradientBrush>
+                                </Button.Background>
+                            </Button>
+                        </VerticalStackLayout>
+                    </Border>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="6" Padding="20,0,0,20">
+                    <Label Text="Agent Listings" FontAttributes="Bold" FontSize="18"></Label>
+                    <CollectionView x:Name="AgentListingsCollectionView" ItemsSource="{Binding AgentListings}" 
+                                    SelectionMode="Single" SelectionChanged="CollectionView_OnSelectionChanged"
+                                    SelectionChangedCommand="{Binding NavigateToDetailCommand}" 
+                                    SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference AgentListingsCollectionView} }"
+                                    >
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Horizontal"
+                                               ItemSpacing="8"/>
+
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <templates:RecommendationsTemplate />
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+
+
+
+            <Border HeightRequest="40" WidthRequest="40" Padding="8" BackgroundColor="White" Opacity="0.8" StrokeThickness="0"
+                    VerticalOptions="Start" HorizontalOptions="Start" Margin="25">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
+                </Border.GestureRecognizers>
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow Opacity="0.3"/>
+                </Border.Shadow>
+                <Image HeightRequest="20"
+                       Source="chevron_back.png" />
+            </Border>
+        </Grid>
+    </ScrollView>
 </ContentPage>

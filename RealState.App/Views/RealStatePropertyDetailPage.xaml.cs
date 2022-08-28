@@ -7,6 +7,7 @@ public partial class RealStatePropertyDetailPage : ContentPage
 	public RealStatePropertyDetailPage()
 	{
 		InitializeComponent();
+        Routing.RegisterRoute(nameof(AgentProfilePage), typeof(AgentProfilePage));
         BindingContext = MauiProgram.GetService<RealStatePropertyDetailViewModel>();
     }
 

@@ -12,6 +12,7 @@
 
 
             <Color x:Key="AccentColor">#c24847</Color>
+            <Color x:Key="TextColor">#24293a</Color>
 
             <x:String x:Key="MulishFont">Mulish</x:String>
             <x:String x:Key="MulishItalicFont">MulishItalic</x:String>
@@ -21,13 +22,19 @@
 
 
             <Style TargetType="Label">
-                <Setter Property="TextColor" Value="#24293a"></Setter>
+                <Setter Property="TextColor" Value="{StaticResource TextColor}"></Setter>
                 <Setter Property="FontFamily" Value="{StaticResource MulishFont}"></Setter>
             </Style>
 
 
             <Style TargetType="Border">
                 <Setter Property="StrokeThickness" Value="0"></Setter>
+                <Setter Property="BackgroundColor" Value="White"></Setter>
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="FontFamily" Value="{StaticResource MulishFont}"></Setter>
             </Style>
 
 

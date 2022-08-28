@@ -65,7 +65,7 @@
                 <IndicatorView x:Name="IndicatorView"
                    IndicatorsShape="Circle"
                    IndicatorColor="#c4c4c4"
-                   SelectedIndicatorColor="#2d335b"
+                   SelectedIndicatorColor="{StaticResource AccentColor}"
                    HorizontalOptions="Center"
                    VerticalOptions="End"
                    Margin="0,8,0,15" >
@@ -82,6 +82,10 @@
 
                 <VerticalStackLayout Padding="25,0" Spacing="15">
                     <Border Padding="4">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavigateToAgentProfileCommand}"
+                                                  CommandParameter="{Binding RealStateProperty.Agent}"></TapGestureRecognizer>
+                        </Border.GestureRecognizers>
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="15" />
                         </Border.StrokeShape>
@@ -162,6 +166,7 @@
                         <HorizontalStackLayout Spacing="8">
                             <Image HeightRequest="20" Source="home_outline.png"></Image>
                             <Label Text="Request a House Tour" VerticalTextAlignment="Center"
+                                   TextColor="Purple"
                                    TextDecorations="Underline"></Label>
                         </HorizontalStackLayout>
                         <Button Grid.Column="1" Text="Ask a question" HeightRequest="40">

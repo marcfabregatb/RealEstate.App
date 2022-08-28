@@ -57,14 +57,17 @@
 	  <None Remove="Resources\Fonts\Mulish.ttf" />
 	  <None Remove="Resources\Images\bathtub.png" />
 	  <None Remove="Resources\Images\bed.svg" />
+	  <None Remove="Resources\Images\call.svg" />
 	  <None Remove="Resources\Images\chevron_back.svg" />
 	  <None Remove="Resources\Images\chevron_down.svg" />
 	  <None Remove="Resources\Images\chevron_forward.svg" />
 	  <None Remove="Resources\Images\condo.jpg" />
 	  <None Remove="Resources\Images\expand.svg" />
 	  <None Remove="Resources\Images\exterior7.jpg" />
+	  <None Remove="Resources\Images\home.svg" />
 	  <None Remove="Resources\Images\home_outline.svg" />
 	  <None Remove="Resources\Images\kitchen7.jpeg" />
+	  <None Remove="Resources\Images\pin.svg" />
 	  <None Remove="Resources\Images\realtor1.jpg" />
 	  <None Remove="Resources\Images\realtor2.jpg" />
 	  <None Remove="Resources\Images\studio.jpg" />

@@ -6,28 +6,26 @@ using RealState.App.Services;
 
 namespace RealState.App.ViewModels
 {
-    public partial class MainViewModel : BaseViewModel
+    public partial class AgentProfileViewModel : BaseViewModel, IQueryAttributable
     {
         private readonly IRealStatePropertyServices _realStatePropertyServices;
-        [ObservableProperty] private ObservableCollection<Category> _categories;
-        [ObservableProperty] private ObservableCollection<RealStateProperty> _recommendations;
+        [ObservableProperty] private Agent _agentProfile;
+        [ObservableProperty] private ObservableCollection<RealStateProperty> _agentListings;
 
-        public MainViewModel(IRealStatePropertyServices realStatePropertyServices)
+        public AgentProfileViewModel(IRealStatePropertyServices realStatePropertyServices)
         {
             _realStatePropertyServices = realStatePropertyServices;
+
+        }
+        public void ApplyQueryAttributes(IDictionary<string, object> query)
+        {
+            AgentProfile = query["AgentProfile"] as Agent;
             LoadData();
         }
 
         private void LoadData()
         {
-            Categories = new ObservableCollection<Category>(_realStatePropertyServices.GetCategories());
-            Recommendations = new ObservableCollection<RealStateProperty>(_realStatePropertyServices.GetRealStateProperties());
-            var navigationParameter = new Dictionary<string, object>
-            {
-                { "RealStateProperty", Recommendations.FirstOrDefault() }
-            };
-            Shell.Current.GoToAsync($"RealStatePropertyDetailPage", navigationParameter);
-
+            AgentListings = new ObservableCollection<RealStateProperty>(_realStatePropertyServices.GetAgentProperties(AgentProfile.Id));
         }
 
         [RelayCommand]
@@ -39,6 +37,5 @@ namespace RealState.App.ViewModels
             };
             await Shell.Current.GoToAsync($"RealStatePropertyDetailPage", navigationParameter);
         }
-
     }
 }

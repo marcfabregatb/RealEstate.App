@@ -58,7 +58,7 @@
                         <RoundRectangle CornerRadius="10"/>
                     </Border.StrokeShape>
                     <Grid ColumnDefinitions="*, Auto">
-                        <Entry Placeholder="Search by category or place" FontFamily="{StaticResource MulishFont}"></Entry>
+                        <Entry Placeholder="Search by category or place" FontFamily="{StaticResource MulishFont}" TextColor="{StaticResource TextColor}"></Entry>
                         <Image Grid.Column="1" Source="search.png" HeightRequest="20" />
                     </Grid>
                 </Border>
