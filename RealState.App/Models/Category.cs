@@ -1,4 +1,4 @@
-﻿namespace RealState.App.Models
+﻿namespace RealEstate.App.Models
 {
     public class Category
     {

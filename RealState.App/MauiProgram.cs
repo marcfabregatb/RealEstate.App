@@ -1,9 +1,9 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.DependencyInjection;
-using RealState.App.Services;
-using RealState.App.ViewModels;
+using RealEstate.App.Services;
+using RealEstate.App.ViewModels;
 
-namespace RealState.App;
+namespace RealEstate.App;
 
 public static class MauiProgram
 {
@@ -27,9 +27,9 @@ public static class MauiProgram
                 fonts.AddFont("fa-solid-900.ttf", "FAsolid900");
             });
 
-        builder.Services.AddTransient<IRealStatePropertyServices, RealStatePropertyServices>();
+        builder.Services.AddTransient<IRealEstatePropertyServices, RealEstatePropertyServices>();
         builder.Services.AddTransient<MainViewModel>();
-        builder.Services.AddTransient<RealStatePropertyDetailViewModel>();
+        builder.Services.AddTransient<RealEstatePropertyDetailViewModel>();
         builder.Services.AddTransient<AgentProfileViewModel>();
 
         

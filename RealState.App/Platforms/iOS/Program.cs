@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace RealState.App;
+namespace RealEstate.App;
 
 public class Program
 {

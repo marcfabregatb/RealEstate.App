@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:models="clr-namespace:RealState.App.Models"
-             x:Class="RealState.App.Views.Templates.RecommendationsTemplate"
-             x:DataType="models:RealStateProperty">
+             xmlns:models="clr-namespace:RealEstate.App.Models"
+             x:Class="RealEstate.App.Views.Templates.RecommendationsTemplate"
+             x:DataType="models:RealEstateProperty">
     <VerticalStackLayout>
         <Border WidthRequest="250" BackgroundColor="White" Padding="8,8,8,12">
             <Border.StrokeShape>

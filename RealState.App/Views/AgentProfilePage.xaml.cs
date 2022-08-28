@@ -1,6 +1,6 @@
-using RealState.App.ViewModels;
+using RealEstate.App.ViewModels;
 
-namespace RealState.App.Views;
+namespace RealEstate.App.Views;
 
 public partial class AgentProfilePage : ContentPage
 {

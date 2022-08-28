@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace RealState.App;
+namespace RealEstate.App;
 
 [Application]
 public class MainApplication : MauiApplication

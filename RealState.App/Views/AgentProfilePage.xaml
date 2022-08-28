@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewModels="clr-namespace:RealState.App.ViewModels"
-             xmlns:templates="clr-namespace:RealState.App.Views.Templates"
-             x:Class="RealState.App.Views.AgentProfilePage"
+             xmlns:viewModels="clr-namespace:RealEstate.App.ViewModels"
+             xmlns:templates="clr-namespace:RealEstate.App.Views.Templates"
+             x:Class="RealEstate.App.Views.AgentProfilePage"
              Title="AgentProfilePage"
              BackgroundColor="#ebecee"
              Shell.NavBarIsVisible="False"

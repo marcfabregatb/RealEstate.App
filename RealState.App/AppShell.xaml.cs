@@ -1,4 +1,4 @@
-﻿namespace RealState.App;
+﻿namespace RealEstate.App;
 
 public partial class AppShell : Shell
 {

@@ -1,4 +1,4 @@
-namespace RealState.App.Views.Templates;
+namespace RealEstate.App.Views.Templates;
 
 public partial class RecommendationsTemplate : ContentView
 {

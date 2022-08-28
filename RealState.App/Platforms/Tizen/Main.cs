@@ -2,7 +2,7 @@ using System;
 using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 
-namespace RealState.App;
+namespace RealEstate.App;
 
 class Program : MauiApplication
 {

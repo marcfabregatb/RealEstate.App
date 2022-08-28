@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace RealState.App.ViewModels
+namespace RealEstate.App.ViewModels
 {
     public partial class BaseViewModel : ObservableObject
     {

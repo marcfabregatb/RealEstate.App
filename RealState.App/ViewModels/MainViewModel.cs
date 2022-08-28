@@ -1,37 +1,37 @@
 ﻿using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using RealState.App.Models;
-using RealState.App.Services;
+using RealEstate.App.Models;
+using RealEstate.App.Services;
 
-namespace RealState.App.ViewModels
+namespace RealEstate.App.ViewModels
 {
     public partial class MainViewModel : BaseViewModel
     {
-        private readonly IRealStatePropertyServices _realStatePropertyServices;
+        private readonly IRealEstatePropertyServices _realEstatePropertyServices;
         [ObservableProperty] private ObservableCollection<Category> _categories;
-        [ObservableProperty] private ObservableCollection<RealStateProperty> _recommendations;
+        [ObservableProperty] private ObservableCollection<RealEstateProperty> _recommendations;
 
-        public MainViewModel(IRealStatePropertyServices realStatePropertyServices)
+        public MainViewModel(IRealEstatePropertyServices realEstatePropertyServices)
         {
-            _realStatePropertyServices = realStatePropertyServices;
+            _realEstatePropertyServices = realEstatePropertyServices;
             LoadData();
         }
 
         private void LoadData()
         {
-            Categories = new ObservableCollection<Category>(_realStatePropertyServices.GetCategories());
-            Recommendations = new ObservableCollection<RealStateProperty>(_realStatePropertyServices.GetRealStateProperties());
+            Categories = new ObservableCollection<Category>(_realEstatePropertyServices.GetCategories());
+            Recommendations = new ObservableCollection<RealEstateProperty>(_realEstatePropertyServices.GetRealEstateProperties());
         }
 
         [RelayCommand]
-        private async Task NavigateToDetail(RealStateProperty property)
+        private async Task NavigateToDetail(RealEstateProperty property)
         {
             var navigationParameter = new Dictionary<string, object>
             {
-                { "RealStateProperty", property }
+                { "RealEstateProperty", property }
             };
-            await Shell.Current.GoToAsync($"RealStatePropertyDetailPage", navigationParameter);
+            await Shell.Current.GoToAsync($"RealEstatePropertyDetailPage", navigationParameter);
         }
 
     }

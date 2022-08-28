@@ -1,6 +1,6 @@
-﻿namespace RealState.App.Models
+﻿namespace RealEstate.App.Models
 {
-    public class RealStateProperty
+    public class RealEstateProperty
     {
         public int Id { get; set; }
         public string Title { get; set; }

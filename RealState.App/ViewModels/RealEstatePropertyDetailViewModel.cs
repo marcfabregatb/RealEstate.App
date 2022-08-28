@@ -1,15 +1,15 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using RealState.App.Models;
+using RealEstate.App.Models;
 
-namespace RealState.App.ViewModels
+namespace RealEstate.App.ViewModels
 {
     
-    public partial class RealStatePropertyDetailViewModel : BaseViewModel, IQueryAttributable
+    public partial class RealEstatePropertyDetailViewModel : BaseViewModel, IQueryAttributable
     {
-        [ObservableProperty]private RealStateProperty _realStateProperty;
+        [ObservableProperty]private RealEstateProperty _realEstateProperty;
 
-        public RealStatePropertyDetailViewModel()
+        public RealEstatePropertyDetailViewModel()
         {
 
         }
@@ -17,7 +17,7 @@ namespace RealState.App.ViewModels
 
         public void ApplyQueryAttributes(IDictionary<string, object> query)
         {
-            RealStateProperty = query["RealStateProperty"] as RealStateProperty;
+            RealEstateProperty = query["RealEstateProperty"] as RealEstateProperty;
         }
 
         [RelayCommand]

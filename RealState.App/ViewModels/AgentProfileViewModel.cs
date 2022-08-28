@@ -1,20 +1,20 @@
 ﻿using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using RealState.App.Models;
-using RealState.App.Services;
+using RealEstate.App.Models;
+using RealEstate.App.Services;
 
-namespace RealState.App.ViewModels
+namespace RealEstate.App.ViewModels
 {
     public partial class AgentProfileViewModel : BaseViewModel, IQueryAttributable
     {
-        private readonly IRealStatePropertyServices _realStatePropertyServices;
+        private readonly IRealEstatePropertyServices _realEstatePropertyServices;
         [ObservableProperty] private Agent _agentProfile;
-        [ObservableProperty] private ObservableCollection<RealStateProperty> _agentListings;
+        [ObservableProperty] private ObservableCollection<RealEstateProperty> _agentListings;
 
-        public AgentProfileViewModel(IRealStatePropertyServices realStatePropertyServices)
+        public AgentProfileViewModel(IRealEstatePropertyServices realEstatePropertyServices)
         {
-            _realStatePropertyServices = realStatePropertyServices;
+            _realEstatePropertyServices = realEstatePropertyServices;
 
         }
         public void ApplyQueryAttributes(IDictionary<string, object> query)
@@ -25,17 +25,17 @@ namespace RealState.App.ViewModels
 
         private void LoadData()
         {
-            AgentListings = new ObservableCollection<RealStateProperty>(_realStatePropertyServices.GetAgentProperties(AgentProfile.Id));
+            AgentListings = new ObservableCollection<RealEstateProperty>(_realEstatePropertyServices.GetAgentProperties(AgentProfile.Id));
         }
 
         [RelayCommand]
-        private async Task NavigateToDetail(RealStateProperty property)
+        private async Task NavigateToDetail(RealEstateProperty property)
         {
             var navigationParameter = new Dictionary<string, object>
             {
-                { "RealStateProperty", property }
+                { "RealEstateProperty", property }
             };
-            await Shell.Current.GoToAsync($"RealStatePropertyDetailPage", navigationParameter);
+            await Shell.Current.GoToAsync($"RealEstatePropertyDetailPage", navigationParameter);
         }
     }
 }

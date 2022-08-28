@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewModels="clr-namespace:RealState.App.ViewModels"
-             x:Class="RealState.App.Views.RealStatePropertyDetailPage"
-             Title="RealStatePropertyDetail" 
+             xmlns:viewModels="clr-namespace:RealEstate.App.ViewModels"
+             x:Class="RealEstate.App.Views.RealEstatePropertyDetailPage"
+             Title="RealEstatePropertyDetail" 
              BackgroundColor="#ebecee"
              Shell.NavBarIsVisible="False"
              Shell.PresentationMode="Animated"
-             x:DataType="viewModels:RealStatePropertyDetailViewModel">
+             x:DataType="viewModels:RealEstatePropertyDetailViewModel">
     <ContentPage.Resources>
         <Style x:Key="IndicatorViewStyle" TargetType="Border">
             <Setter Property="VisualStateManager.VisualStateGroups">
@@ -36,7 +36,7 @@
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="20"/>
                         </Border.StrokeShape>
-                        <CarouselView HeightRequest="330" ItemsSource="{Binding RealStateProperty.Images}"
+                        <CarouselView HeightRequest="330" ItemsSource="{Binding RealEstateProperty.Images}"
                               IndicatorView="IndicatorView">
                             <CarouselView.ItemTemplate>
                                 <DataTemplate>
@@ -57,7 +57,7 @@
                                     Text="Price"></Label>
                                 <Label TextColor="White" FontSize="18" FontAttributes="Bold" 
                                     VerticalOptions="Center" HorizontalOptions="Center" 
-                                    Text="{Binding RealStateProperty.Price, StringFormat='{}{0:c0}'}"></Label>
+                                    Text="{Binding RealEstateProperty.Price, StringFormat='{}{0:c0}'}"></Label>
                             </VerticalStackLayout>
                         </Grid>
                     </Border>
@@ -84,7 +84,7 @@
                     <Border Padding="4">
                         <Border.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding NavigateToAgentProfileCommand}"
-                                                  CommandParameter="{Binding RealStateProperty.Agent}"></TapGestureRecognizer>
+                                                  CommandParameter="{Binding RealEstateProperty.Agent}"></TapGestureRecognizer>
                         </Border.GestureRecognizers>
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="15" />
@@ -94,11 +94,11 @@
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="10" />
                                 </Border.StrokeShape>
-                                <Image Source="{Binding RealStateProperty.Agent.Image}" 
+                                <Image Source="{Binding RealEstateProperty.Agent.Image}" 
                                HeightRequest="70" WidthRequest="70" Aspect="AspectFill"></Image>
                             </Border>
                             <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="8">
-                                <Label Text="{Binding RealStateProperty.Agent.Name}"
+                                <Label Text="{Binding RealEstateProperty.Agent.Name}"
                                FontSize="16"
                                FontAttributes="Bold"></Label>
                                 <Label Text="View Agent Profile"></Label>
@@ -116,10 +116,10 @@
                         </Border.StrokeShape>
                         <VerticalStackLayout VerticalOptions="Center" Spacing="15" Padding="10">
                             <VerticalStackLayout Spacing="6">
-                                <Label Text="{Binding RealStateProperty.Title}"
+                                <Label Text="{Binding RealEstateProperty.Title}"
                                        FontSize="24"
                                        FontAttributes="Bold" MaxLines="1"></Label>
-                                <Label Text="{Binding RealStateProperty.Address}"
+                                <Label Text="{Binding RealEstateProperty.Address}"
                                        MaxLines="1"
                                        LineBreakMode="TailTruncation"
                                        FontSize="12"
@@ -135,7 +135,7 @@
                                         </Border.StrokeShape>
                                         <Image Source="bed" ></Image>
                                     </Border>
-                                    <Label Text="{Binding RealStateProperty.Rooms}" TextColor="#24293a" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                    <Label Text="{Binding RealEstateProperty.Rooms}" TextColor="#24293a" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"></Label>
                                 </HorizontalStackLayout>
                                 <HorizontalStackLayout Spacing="8">
                                     <Border HeightRequest="30" WidthRequest="30" Padding="6" BackgroundColor="#f6eff3">
@@ -144,7 +144,7 @@
                                         </Border.StrokeShape>
                                         <Image Source="bathtub.png"  ></Image>
                                     </Border>
-                                    <Label Text="{Binding RealStateProperty.Bathrooms}" TextColor="#24293a" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                    <Label Text="{Binding RealEstateProperty.Bathrooms}" TextColor="#24293a" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"></Label>
                                 </HorizontalStackLayout>
                                 <HorizontalStackLayout Spacing="6">
                                     <Border HeightRequest="30" WidthRequest="30" Padding="6" BackgroundColor="#f6eff3">
@@ -154,12 +154,12 @@
                                         <Image Source="expand.png" ></Image>
                                     </Border>
                                     <HorizontalStackLayout Spacing="3">
-                                        <Label Text="{Binding RealStateProperty.SquareMeters}" TextColor="#24293a" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                        <Label Text="{Binding RealEstateProperty.SquareMeters}" TextColor="#24293a" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"></Label>
                                         <Label Text="m²" TextColor="#24293a" FontSize="18" FontAttributes="Bold" VerticalOptions="Center"></Label>
                                     </HorizontalStackLayout>
                                 </HorizontalStackLayout>
                             </HorizontalStackLayout>
-                            <Label Text="{Binding RealStateProperty.Description}" ></Label>
+                            <Label Text="{Binding RealEstateProperty.Description}" ></Label>
                         </VerticalStackLayout>
                     </Border>
                     <Grid ColumnDefinitions="*, Auto"  >

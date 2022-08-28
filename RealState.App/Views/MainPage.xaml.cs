@@ -1,6 +1,6 @@
-﻿using RealState.App.ViewModels;
+﻿using RealEstate.App.ViewModels;
 
-namespace RealState.App.Views;
+namespace RealEstate.App.Views;
 
 public partial class MainPage : ContentPage
 {
@@ -8,7 +8,7 @@ public partial class MainPage : ContentPage
     public MainPage()
 	{
 		InitializeComponent();
-        Routing.RegisterRoute(nameof(RealStatePropertyDetailPage), typeof(RealStatePropertyDetailPage));
+        Routing.RegisterRoute(nameof(RealEstatePropertyDetailPage), typeof(RealEstatePropertyDetailPage));
         BindingContext = MauiProgram.GetService<MainViewModel>();
     }
 

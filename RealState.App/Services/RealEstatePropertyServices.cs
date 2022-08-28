@@ -1,10 +1,10 @@
-﻿using RealState.App.Models;
+﻿using RealEstate.App.Models;
 
-namespace RealState.App.Services
+namespace RealEstate.App.Services
 {
-    public class RealStatePropertyServices : IRealStatePropertyServices
+    public class RealEstatePropertyServices : IRealEstatePropertyServices
     {
-        public List<RealStateProperty> GetRealStateProperties()
+        public List<RealEstateProperty> GetRealEstateProperties()
         {
             var realtorDescription =
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae justo eget magna fermentum iaculis. Sit amet nulla facilisi morbi tempus iaculis urna id volutpat. Viverra maecenas accumsan lacus vel facilisis.  \r\n\r\nAdipiscing bibendum est ultricies integer. Vitae tempus quam pellentesque nec nam aliquam sem et tortor. Fusce ut placerat orci nulla pellentesque dignissim enim sit.  Arcu risus quis varius quam quisque. Accumsan tortor posuere ac ut consequat semper viverra. ";
@@ -12,7 +12,7 @@ namespace RealState.App.Services
             var agent2 = new Agent() { Id = 2, Name = "Valentina Crossfusta", Image = "Realtor2.jpg", Description = realtorDescription };
             var categories = GetCategories();
 
-            var realStateProperty = new List<RealStateProperty>()
+            var realEstateProperty = new List<RealEstateProperty>()
             {
                 new()
                 {
@@ -126,12 +126,12 @@ namespace RealState.App.Services
             };
 
 
-            return realStateProperty;
+            return realEstateProperty;
         }
 
-        public List<RealStateProperty> GetAgentProperties(int agentId)
+        public List<RealEstateProperty> GetAgentProperties(int agentId)
         {
-            var properties = GetRealStateProperties().Where(x => x.Agent.Id == agentId).ToList();
+            var properties = GetRealEstateProperties().Where(x => x.Agent.Id == agentId).ToList();
             return properties;
         }
 
