@@ -1,3 +1,3 @@
 # RealEstate.App
 
-![Real Estate App](realStateApp.gif)
+![Real Estate App](realEstateApp.gif)
