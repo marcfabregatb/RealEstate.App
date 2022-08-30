@@ -1,11 +1,12 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using RealEstate.App.Models;
+using RealEstate.App.ViewModels.Interfaces;
 
 namespace RealEstate.App.ViewModels
 {
     
-    public partial class RealEstatePropertyDetailViewModel : BaseViewModel, IQueryAttributable
+    public partial class RealEstatePropertyDetailViewModel : BaseViewModel, IRealEstatePropertyDetailViewModel, IQueryAttributable
     {
         [ObservableProperty]private RealEstateProperty _realEstateProperty;
 

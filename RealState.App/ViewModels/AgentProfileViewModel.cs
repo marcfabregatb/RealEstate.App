@@ -3,10 +3,11 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using RealEstate.App.Models;
 using RealEstate.App.Services;
+using RealEstate.App.ViewModels.Interfaces;
 
 namespace RealEstate.App.ViewModels
 {
-    public partial class AgentProfileViewModel : BaseViewModel, IQueryAttributable
+    public partial class AgentProfileViewModel : BaseViewModel, IAgentProfileViewModel, IQueryAttributable
     {
         private readonly IRealEstatePropertyServices _realEstatePropertyServices;
         [ObservableProperty] private Agent _agentProfile;

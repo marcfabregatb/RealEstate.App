@@ -33,7 +33,7 @@
                     <Label HorizontalOptions="Center" Text="Location"></Label>
                     <HorizontalStackLayout HorizontalOptions="Center" Spacing="6">
                         <Label HorizontalOptions="Center" VerticalOptions="Center" Text="Amposta" FontAttributes="Bold" FontSize="16" FontFamily="{StaticResource MulishFont}"></Label>
-                        <Image VerticalOptions="Center" Source="chevron_down.png" HeightRequest="15"></Image>
+                        <Image VerticalOptions="Center" HorizontalOptions="Center" Source="chevron_down.png" WidthRequest="15" HeightRequest="15"></Image>
                     </HorizontalStackLayout>
                 </VerticalStackLayout>
                 <Grid Grid.Column="2" >

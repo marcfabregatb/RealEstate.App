@@ -1,14 +1,14 @@
-using RealEstate.App.ViewModels;
+using RealEstate.App.ViewModels.Interfaces;
 
 namespace RealEstate.App.Views;
 
 public partial class RealEstatePropertyDetailPage : ContentPage
 {
-	public RealEstatePropertyDetailPage()
+	public RealEstatePropertyDetailPage(IRealEstatePropertyDetailViewModel viewModel)
 	{
 		InitializeComponent();
         Routing.RegisterRoute(nameof(AgentProfilePage), typeof(AgentProfilePage));
-        BindingContext = MauiProgram.GetService<RealEstatePropertyDetailViewModel>();
+        BindingContext = viewModel;
     }
 
     private void TapGestureRecognizer_OnTapped(object sender, EventArgs e)

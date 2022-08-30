@@ -3,10 +3,11 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using RealEstate.App.Models;
 using RealEstate.App.Services;
+using RealEstate.App.ViewModels.Interfaces;
 
 namespace RealEstate.App.ViewModels
 {
-    public partial class MainViewModel : BaseViewModel
+    public partial class MainViewModel : BaseViewModel, IMainViewModel
     {
         private readonly IRealEstatePropertyServices _realEstatePropertyServices;
         [ObservableProperty] private ObservableCollection<Category> _categories;
@@ -33,6 +34,6 @@ namespace RealEstate.App.ViewModels
             };
             await Shell.Current.GoToAsync($"RealEstatePropertyDetailPage", navigationParameter);
         }
-
+        
     }
 }

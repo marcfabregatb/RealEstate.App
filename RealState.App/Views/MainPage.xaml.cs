@@ -1,15 +1,15 @@
-﻿using RealEstate.App.ViewModels;
+﻿using RealEstate.App.ViewModels.Interfaces;
 
 namespace RealEstate.App.Views;
 
 public partial class MainPage : ContentPage
 {
 
-    public MainPage()
-	{
-		InitializeComponent();
+    public MainPage(IMainViewModel viewModel)
+    {
+        InitializeComponent();
         Routing.RegisterRoute(nameof(RealEstatePropertyDetailPage), typeof(RealEstatePropertyDetailPage));
-        BindingContext = MauiProgram.GetService<MainViewModel>();
+        BindingContext = viewModel;
     }
 
     private void CollectionView_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
