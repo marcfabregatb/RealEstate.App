@@ -16,8 +16,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ScrollView>
-        <VerticalStackLayout Spacing="30"
-            Padding="0,20">
+        <VerticalStackLayout Spacing="30" Padding="0,20">
             <Grid ColumnDefinitions="Auto, *, Auto" Padding="20, 0" >
                 <Border HeightRequest="45" WidthRequest="45" Padding="8" BackgroundColor="White" StrokeThickness="0">
                     <Border.StrokeShape>
@@ -59,14 +58,14 @@
                     </Border.StrokeShape>
                     <Grid ColumnDefinitions="*, Auto">
                         <Entry Placeholder="Search by category or place" FontFamily="{StaticResource MulishFont}" TextColor="{StaticResource TextColor}"></Entry>
-                        <Image Grid.Column="1" Source="search.png" HeightRequest="20" />
+                        <Image Grid.Column="1" Source="search.png" HeightRequest="20" WidthRequest="20"/>
                     </Grid>
                 </Border>
             </Grid>
             
 
 
-            <Grid Padding="20, 0 , 0, 0">
+            <Grid Padding="20, 0 , 0, 0" HeightRequest="130">
                 <CollectionView ItemsSource="{Binding Categories}">
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Span="2"
@@ -80,13 +79,13 @@
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="15"/>
                                 </Border.StrokeShape>
-                                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                                <Grid WidthRequest="150" ColumnDefinitions="*,Auto" ColumnSpacing="10">
                                     <Label VerticalOptions="Center" Text="{Binding Name}" FontSize="15" TextColor="#887e95"></Label>
                                     <Border Grid.Column="1">
                                         <Border.StrokeShape>
                                             <RoundRectangle CornerRadius="10"/>
                                         </Border.StrokeShape>
-                                        <Image WidthRequest="50" Aspect="AspectFill" Source="{Binding Image}"></Image>
+                                        <Image WidthRequest="50" HeightRequest="50" Aspect="AspectFill" Source="{Binding Image}"></Image>
                                     </Border>
                                 </Grid>
                             </Border>
@@ -96,7 +95,7 @@
             </Grid>
             
 
-            <VerticalStackLayout Spacing="6" Padding="20,0,0,0">
+            <VerticalStackLayout Spacing="6" Padding="20,0,0,0" HeightRequest="340">
                 <Label Text="Recommendations" FontAttributes="Bold" FontSize="18"></Label>
                 <CollectionView x:Name="RecommendationCollectionView" ItemsSource="{Binding Recommendations}" 
                                 SelectionMode="Single" SelectionChanged="CollectionView_OnSelectionChanged"

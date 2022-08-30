@@ -90,12 +90,12 @@
                             <RoundRectangle CornerRadius="15" />
                         </Border.StrokeShape>
                         <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="20" >
-                            <Border >
+                            <Border>
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="10" />
                                 </Border.StrokeShape>
                                 <Image Source="{Binding RealEstateProperty.Agent.Image}" 
-                               HeightRequest="70" WidthRequest="70" Aspect="AspectFill"></Image>
+                               HeightRequest="80" WidthRequest="80" Aspect="AspectFill"></Image>
                             </Border>
                             <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="8">
                                 <Label Text="{Binding RealEstateProperty.Agent.Name}"
@@ -103,7 +103,7 @@
                                FontAttributes="Bold"></Label>
                                 <Label Text="View Agent Profile"></Label>
                             </VerticalStackLayout>
-                            <Image Grid.Column="3" Source="chevron_forward.png" HeightRequest="20" Margin="15"
+                            <Image Grid.Column="3" Source="chevron_forward.png" HeightRequest="20" WidthRequest="20" Margin="15"
                                VerticalOptions="Center" HorizontalOptions="End"></Image>
                         </Grid>
 
@@ -164,12 +164,12 @@
                     </Border>
                     <Grid ColumnDefinitions="*, Auto"  >
                         <HorizontalStackLayout Spacing="8">
-                            <Image HeightRequest="20" Source="home_outline.png"></Image>
+                            <Image HeightRequest="20" WidthRequest="20" Source="home_outline.png"></Image>
                             <Label Text="Request a House Tour" VerticalTextAlignment="Center"
                                    TextColor="Purple"
                                    TextDecorations="Underline"></Label>
                         </HorizontalStackLayout>
-                        <Button Grid.Column="1" Text="Ask a question" HeightRequest="40">
+                        <Button Grid.Column="1" Text="Ask a question" HeightRequest="40" >
                             <Button.Background>
                                 <LinearGradientBrush EndPoint="1,0">
                                     <GradientStop Color="#ff5e5d"

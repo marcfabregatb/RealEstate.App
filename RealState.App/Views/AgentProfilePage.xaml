@@ -33,8 +33,8 @@
                                     <Label Text="{Binding AgentProfile.Name}"
                                        FontSize="16"
                                        FontAttributes="Bold"></Label>
-                                    <HorizontalStackLayout>
-                                        <Image Source="pin.png" HeightRequest="18"></Image>
+                                    <HorizontalStackLayout HorizontalOptions="Start">
+                                        <Image Source="pin.png" HeightRequest="18" WidthRequest="18"></Image>
                                         <Label Text="Edmonton" TextColor="#9196a8" FontAttributes="Italic"></Label>
                                     </HorizontalStackLayout>
                                     
@@ -76,7 +76,7 @@
                     </Border>
                 </VerticalStackLayout>
 
-                <VerticalStackLayout Spacing="6" Padding="20,0,0,20">
+                <VerticalStackLayout Spacing="6" Padding="20,0,0,20" HeightRequest="370">
                     <Label Text="Agent Listings" FontAttributes="Bold" FontSize="18"></Label>
                     <CollectionView x:Name="AgentListingsCollectionView" ItemsSource="{Binding AgentListings}" 
                                     SelectionMode="Single" SelectionChanged="CollectionView_OnSelectionChanged"
